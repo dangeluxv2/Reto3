@@ -29,8 +29,6 @@ public class Reservation {
     private Date startDate;
     private Date devolutionDate;
     private String status = "created";
-    
-    private String score;
 
    @ManyToOne
    @JoinColumn(name = "toolId")
@@ -41,6 +39,8 @@ public class Reservation {
    @JoinColumn(name = "clientId")
    @JsonIgnoreProperties({"reservations", "messages"})
    private Client client;
+
+    private String score;
 
     public Integer getIdReservation() {
         return idReservation;
@@ -74,14 +74,6 @@ public class Reservation {
         this.status = status;
     }
 
-    public String getScore() {
-        return score;
-    }
-
-    public void setScore(String score) {
-        this.score = score;
-    }
-
     public Tool getTool() {
         return tool;
     }
@@ -97,5 +89,15 @@ public class Reservation {
     public void setClient(Client client) {
         this.client = client;
     }
+
+    public String getScore() {
+        return score;
+    }
+
+    public void setScore(String score) {
+        this.score = score;
+    }
+   
+    
     
 }
